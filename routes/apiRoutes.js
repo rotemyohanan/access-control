@@ -1,6 +1,6 @@
 const express = require('express')
 const router = express.Router()
-const flightService = require('../services/flightService')
+const flightService = require('../services/userService')
 const { isEmail } = require('is-email')
 
 router.get('/', async (req, res) => {
@@ -20,10 +20,10 @@ router.post('/users', async (req, res) => {
 
 // Create user credentials
 router.post('/', async (req, res) => {
-  
+
 })
 
-// Check if user exists in the 
+// Check if user exists in the
 router.get('/', async (req, res) => {
   // extract the query parameter email = 'aaa@gmail.com'
   const email = req.query.email
@@ -32,10 +32,9 @@ router.get('/', async (req, res) => {
 
   // set a connection to the mongoDB
   // find if the user exists in the db (uniqness by email)
-debug.findUser(email)
+  debug.findUser(email)
   // if yes return the user data
   return res.status(200).json({ userData })
-  
 })
 
 router.post('/flights', async (req, res) => {

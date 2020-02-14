@@ -1,6 +1,7 @@
 const express = require('express')
 const router = express.Router()
 const flightService = require('../services/flightService')
+const { isEmail } = require('is-email')
 
 router.get('/', async (req, res) => {
   console.log('This is the main path')
@@ -10,6 +11,31 @@ router.get('/', async (req, res) => {
 router.get('/health-check', async (req, res) => {
   console.log('successful health-check')
   return res.status(200).send('health-check ok')
+})
+
+// Create a new user
+router.post('/users', async (req, res) => {
+
+})
+
+// Create user credentials
+router.post('/', async (req, res) => {
+  
+})
+
+// Check if user exists in the 
+router.get('/', async (req, res) => {
+  // extract the query parameter email = 'aaa@gmail.com'
+  const email = req.query.email
+
+  // validate it is a valid email
+
+  // set a connection to the mongoDB
+  // find if the user exists in the db (uniqness by email)
+debug.findUser(email)
+  // if yes return the user data
+  return res.status(200).json({ userData })
+  
 })
 
 router.post('/flights', async (req, res) => {

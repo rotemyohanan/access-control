@@ -39,8 +39,10 @@
     "config": "^3.2.5",
     "debug": "^4.1.1",
     "express": "^4.16.4",
+    "is-email": "^1.0.0",
     "mongoose": "^5.9.0",
     "nodemon": "^2.0.2",
+    "pino": "^5.16.0",
     "stringify-object": "^3.3.0"
   },
   "devDependencies": {

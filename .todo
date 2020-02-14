@@ -6,12 +6,18 @@
 
 ### validator
 - set the superstruct
+- set email validation
+- set tags as an Array of strings
+- set the date validation in a specific format
+- data sanitation for the input and the output.
+
 
 ### tests
 - set integration tests framework
 
 ### DB
 - set mongoDB connection
+- define the users schema in the database
 
 ### REDIS
 - set redis connection
@@ -24,3 +30,5 @@
 - set jwt access
 - set OAuth token access
 - set socket connection
+- aes encryption
+- set the users definitions

@@ -5,6 +5,8 @@ const mongoose = require('mongoose')
 // const PositiveControl = require('../data/models/positivecontrol').PositiveControl
 // const positiveControlService = require('../data/services/positiveControlService')
 const config = require('./config/defaultConfig')
+const { port } = config
+const pino = require('pino')
 const flightRouter = require('./routes/apiRoutes')
 // const logger = require('./middlewares/logger')
 const startupDebugger = require('debug')('app:startup')
@@ -45,5 +47,4 @@ app.post("/api/v1/positive-controls", async (req, res) => {
     return res.status(201).send(`A new positive control name: ${result.name} was created in the database: ${result}`)
 })
 */
-const port = process.env.PORT || 3000
 app.listen(port, () => console.log(`The application is listenning on port ${port}`))

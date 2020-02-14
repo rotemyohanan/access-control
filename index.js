@@ -1,12 +1,12 @@
-const express = require('express');
-const app = express();
+const express = require('express')
+const app = express()
 const mongoose = require('mongoose')
-//const positiveControlSchema = require('../data/models/positivecontrol').positiveControlSchema
-//const PositiveControl = require('../data/models/positivecontrol').PositiveControl
-//const positiveControlService = require('../data/services/positiveControlService')
+// const positiveControlSchema = require('../data/models/positivecontrol').positiveControlSchema
+// const PositiveControl = require('../data/models/positivecontrol').PositiveControl
+// const positiveControlService = require('../data/services/positiveControlService')
 const config = require('config')
-const flightRouter = require('./routes/flightRoutes')
-const logger = require('./middlewares/logger')
+const flightRouter = require('./routes/apiRoutes')
+// const logger = require('./middlewares/logger')
 const startupDebugger = require('debug')('app:startup')
 const dbDebugger = require('debug')('app:db')
 
@@ -17,12 +17,12 @@ const dbDebugger = require('debug')('app:db')
 app.use(express.json())
 app.use('/api/v1', flightRouter)
 
-//console.log(`app host: ${config.get("website.host")}`)
+// console.log(`app host: ${config.get("website.host")}`)
 startupDebugger('Main application is running')
-//console.log(`Mail password: ` + config.get('mail.password'))
+// console.log(`Mail password: ` + config.get('mail.password'))
 dbDebugger('Connected to the database library ____ ')
 
-/*app.get("/api/v1/positive-controls/sampleId/:sampleId/variant-name/:name", async (req, res) => {
+/* app.get("/api/v1/positive-controls/sampleId/:sampleId/variant-name/:name", async (req, res) => {
     let variantName = req.params.name
     debugger
     const result = await PositiveControl.find({name : variantName})
@@ -43,8 +43,7 @@ app.post("/api/v1/positive-controls", async (req, res) => {
     const positiveControl = positiveControlService.createNewPositiveControl(req)
     const result = await positiveControl.save()
     return res.status(201).send(`A new positive control name: ${result.name} was created in the database: ${result}`)
-}) 
+})
 */
 const port = process.env.PORT || 3000
 app.listen(port, () => console.log(`The application is listenning on port ${port}`))
-

@@ -1,0 +1,26 @@
+### configuration
+- set configuration based on stage
+
+### logger
+- set logger
+
+### validator
+- set the superstruct
+
+### tests
+- set integration tests framework
+
+### DB
+- set mongoDB connection
+
+### REDIS
+- set redis connection
+
+### AWS
+- set connection to S3
+- set SQS connection
+
+### application
+- set jwt access
+- set OAuth token access
+- set socket connection

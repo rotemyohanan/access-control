@@ -25,6 +25,7 @@
   },
   "scripts": {
     "start": "nodemon index.js",
+    "debug": "node inspect index.js",
     "test": "standard &&  jest --no-cache"
   },
   "preset": "latest",

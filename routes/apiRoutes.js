@@ -1,7 +1,7 @@
 const express = require('express')
 const router = express.Router()
 const flightService = require('../services/userService')
-const { isEmail } = require('is-email')
+const userValidator = require('../validators/validateUser')
 
 router.get('/', async (req, res) => {
   console.log('This is the main path')
@@ -16,6 +16,18 @@ router.get('/health-check', async (req, res) => {
 // Create a new user
 router.post('/users', async (req, res) => {
 
+})
+
+router.get('/test', async (req, res) => {
+  const mockUser = {
+    id: 1,
+    name: 'Jane Smith',
+    email: 'jane@example.com',
+    password: '1234',
+    // departments: ['engineering', 'product'],
+    status: 'active'
+  }
+  userValidator.validateUser(mockUser)
 })
 
 // Create user credentials
